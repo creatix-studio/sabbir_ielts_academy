@@ -1,0 +1,6 @@
+{
+  "name": "SabbirIELTS Academy",
+  "description": "An academy platform offering IELTS preparation, spoken English, and global education consulting.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

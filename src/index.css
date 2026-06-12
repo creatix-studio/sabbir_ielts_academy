@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #00174e;
+  --color-brand-red: #d02830;
+  
+  --color-surface: #fbf9f8;
+  --color-surface-dim: #dbd9d9;
+  --color-surface-bright: #fbf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3f3;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae8e7;
+  --color-surface-container-highest: #e4e2e2;
+  
+  --color-on-surface: #1b1c1c;
+  --color-on-surface-variant: #45464f;
+  
+  --color-outline: #757681;
+  --color-outline-variant: #c5c6d1;
+  
+  --font-serif: "Hind Siliguri", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Hind Siliguri", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-grotesk: "Hanken Grotesk", sans-serif;
+
+  --spacing-section: 120px;
+  --spacing-gutter: 24px;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-surface text-on-surface antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
