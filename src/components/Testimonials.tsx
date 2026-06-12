@@ -111,10 +111,10 @@ export function TestimonialsSection() {
             </div>
             
             <div>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#00174e] tracking-tight leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#d02830] tracking-tight leading-tight">
                 শিক্ষার্থীদের সাফল্যের গল্প:
               </h2>
-              <p className="font-sans text-xl sm:text-2xl md:text-3xl font-semibold text-[#d02830] mt-2">
+              <p className="font-sans text-xl sm:text-2xl md:text-3xl font-semibold text-[#8b151b] mt-2">
                 আমরা যেভাবে তাদের এগিয়ে যেতে সাহায্য করেছি
               </p>
             </div>
@@ -125,14 +125,14 @@ export function TestimonialsSection() {
             <div className="flex gap-2">
               <button 
                 onClick={() => handleScroll("left")}
-                className="p-3 rounded-full border border-gray-200 hover:border-brand-navy/30 hover:bg-neutral-50 text-gray-600 transition-colors cursor-pointer"
+                className="p-3 rounded-full border border-gray-200 hover:border-brand-red/30 hover:bg-neutral-50 text-gray-600 transition-colors cursor-pointer"
                 aria-label="Scroll left"
               >
                 <ArrowLeft size={18} />
               </button>
               <button 
                 onClick={() => handleScroll("right")}
-                className="p-3 rounded-full border border-gray-200 hover:border-brand-navy/30 hover:bg-neutral-50 text-gray-600 transition-colors cursor-pointer"
+                className="p-3 rounded-full border border-gray-200 hover:border-brand-red/30 hover:bg-neutral-50 text-gray-600 transition-colors cursor-pointer"
                 aria-label="Scroll right"
               >
                 <ArrowRight size={18} />
@@ -141,7 +141,7 @@ export function TestimonialsSection() {
 
             <button
               onClick={() => openEnrollment("Testimonials Counseling")}
-              className="bg-[#d02830] hover:bg-[#00174e] text-white font-sans font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer"
+              className="bg-[#d02830] hover:bg-[#a01a20] text-white font-sans font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2 cursor-pointer"
             >
               <span>View all Success</span>
               <ArrowRight size={16} />
@@ -168,7 +168,7 @@ export function TestimonialsSection() {
           {doubledTestimonials.map((testimonial, idx) => (
             <div
               key={`${testimonial.id}-${idx}`}
-              className="w-[340px] sm:w-[420px] bg-[#00174e] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] shrink-0"
+              className="w-[340px] sm:w-[420px] bg-[#d02830] rounded-[32px] p-8 sm:p-10 flex flex-col justify-between border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] shrink-0"
               id={`testimonial-card-${testimonial.id}`}
             >
               {/* Red/Rose Quote icon exact placement like the mockup */}
