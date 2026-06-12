@@ -59,21 +59,21 @@ export function Footer() {
                 href="https://www.facebook.com/profile.php?id=100088782781960" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="w-10 h-10 rounded-full bg-[#00174e] hover:bg-[#d02830] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
+                className="w-10 h-10 rounded-full bg-[#d02830] hover:bg-[#00174e] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
                 aria-label="Find us on Facebook"
               >
                 <Facebook size={18} />
               </a>
               <a 
                 href="mailto:shabbirhossaintushar224@gmail.com" 
-                className="w-10 h-10 rounded-full bg-[#00174e] hover:bg-[#d02830] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
+                className="w-10 h-10 rounded-full bg-[#d02830] hover:bg-[#00174e] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
                 aria-label="Email Us"
               >
                 <Mail size={18} />
               </a>
               <a 
                 href="tel:+8801345693052" 
-                className="w-10 h-10 rounded-full bg-[#00174e] hover:bg-[#d02830] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
+                className="w-10 h-10 rounded-full bg-[#d02830] hover:bg-[#00174e] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
                 aria-label="Call Us"
               >
                 <Phone size={18} />
