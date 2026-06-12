@@ -11,6 +11,7 @@ export function Navbar() {
 
   const links = [
     { name: "Home", path: "/" },
+    { name: "IELTS", path: "/ielts" },
     { name: "Spoken English", path: "/spoken-english" },
     { name: "Study Abroad", path: "/services" },
   ];
@@ -77,7 +78,7 @@ export function Navbar() {
                   {link.name}
                 </Link>
                 {/* Visual dropdown/chevron indicator to mimic academic structures with sub-programs */}
-                {["Study Abroad", "Spoken English"].includes(link.name) && (
+                {["Study Abroad", "Spoken English", "IELTS"].includes(link.name) && (
                   <ChevronDown size={12} className="text-blue-200 opacity-75 group-hover/item:text-white transition-colors mt-0.5" />
                 )}
               </div>
@@ -117,7 +118,7 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
               >
                 <span>{link.name}</span>
-                {["Study Abroad", "Spoken English"].includes(link.name) && (
+                {["Study Abroad", "Spoken English", "IELTS"].includes(link.name) && (
                   <ChevronDown size={12} />
                 )}
               </Link>
