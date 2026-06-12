@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "sabbirieltsacademy",
     "public": "dist",
     "ignore": [
       "firebase.json",
