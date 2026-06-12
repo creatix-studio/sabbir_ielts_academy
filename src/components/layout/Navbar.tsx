@@ -51,7 +51,7 @@ export function Navbar() {
       </div>
 
       {/* 2. Main Navigation Bar (Academic Red Style) */}
-      <div className="bg-[#d02830] text-white py-4 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#00174e] text-white py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 shrink-0">
             <img 
@@ -71,14 +71,14 @@ export function Navbar() {
                     "uppercase font-grotesk text-xs tracking-wider transition-colors duration-200 py-1.5 px-1 font-bold",
                     location.pathname === link.path 
                       ? "text-white border-b-2 border-white/80" 
-                      : "text-[#ffd1d3] hover:text-white"
+                      : "text-blue-200 hover:text-white"
                   )}
                 >
                   {link.name}
                 </Link>
                 {/* Visual dropdown/chevron indicator to mimic academic structures with sub-programs */}
                 {["Study Abroad", "Spoken English"].includes(link.name) && (
-                  <ChevronDown size={12} className="text-[#ffd1d3] opacity-75 group-hover/item:text-white transition-colors mt-0.5" />
+                  <ChevronDown size={12} className="text-blue-200 opacity-75 group-hover/item:text-white transition-colors mt-0.5" />
                 )}
               </div>
             ))}
@@ -87,14 +87,14 @@ export function Navbar() {
           <div className="hidden md:block">
             <button
               onClick={() => openEnrollment()}
-              className="bg-white text-[#d02830] px-6 py-2.5 font-grotesk font-bold uppercase tracking-wider hover:bg-[#580c10] hover:text-white hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 rounded text-xs cursor-pointer inline-block"
+              className="bg-white text-[#00174e] px-6 py-2.5 font-grotesk font-bold uppercase tracking-wider hover:bg-[#011038] hover:text-white hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 rounded text-xs cursor-pointer inline-block"
             >
               এখনই ভর্তি হন
             </button>
           </div>
 
           <button 
-            className="lg:hidden text-white p-2 hover:bg-[#580c10] rounded-md transition-colors"
+            className="lg:hidden text-white p-2 hover:bg-[#011038] rounded-md transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -104,15 +104,15 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden bg-[#d02830] border-t border-[#580c10] pb-6 px-4 shadow-2xl absolute w-full left-0 top-[72px] md:top-[112px]">
+        <div className="lg:hidden bg-[#00174e] border-t border-[#011038] pb-6 px-4 shadow-2xl absolute w-full left-0 top-[72px] md:top-[112px]">
           <nav className="flex flex-col gap-2 pt-4">
             {links.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 className={cn(
-                  "uppercase font-grotesk text-xs tracking-wider font-bold py-3 px-3 rounded-md hover:bg-[#580c10] transition-all flex justify-between items-center",
-                  location.pathname === link.path ? "text-white bg-[#580c10]" : "text-[#ffd1d3]"
+                  "uppercase font-grotesk text-xs tracking-wider font-bold py-3 px-3 rounded-md hover:bg-[#011038] transition-all flex justify-between items-center",
+                  location.pathname === link.path ? "text-white bg-[#011038]" : "text-blue-200"
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -127,7 +127,7 @@ export function Navbar() {
                 setIsOpen(false);
                 openEnrollment();
               }}
-              className="mt-4 bg-white text-[#d02830] px-6 py-3.5 font-grotesk font-bold uppercase tracking-wider text-center rounded shadow-lg mx-2 hover:bg-[#ffe4e6] transition-all cursor-pointer"
+              className="mt-4 bg-white text-[#00174e] px-6 py-3.5 font-grotesk font-bold uppercase tracking-wider text-center rounded shadow-lg mx-2 hover:bg-blue-50 transition-all cursor-pointer"
             >
               এখনই ভর্তি হন
             </button>

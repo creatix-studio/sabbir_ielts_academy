@@ -12,6 +12,7 @@ import { StudyAbroad } from "./pages/StudyAbroad";
 import { SpokenEnglish } from "./pages/SpokenEnglish";
 import { EnrollmentProvider } from "./context/EnrollmentContext";
 import { EnrollmentModal } from "./components/layout/EnrollmentModal";
+import { ChatBot } from "./components/layout/ChatBot";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="*" element={<Home />} />
           </Routes>
           <Footer />
+          <ChatBot />
           <EnrollmentModal />
         </div>
       </BrowserRouter>
