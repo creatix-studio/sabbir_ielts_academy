@@ -372,7 +372,9 @@ export function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-brand-red shrink-0 mt-0.5" />
-                  <span className="font-sans text-on-surface font-medium">১-টু-১ প্রবলেম সলভিং সেশন</span>
+                  <span className="font-sans text-on-surface font-medium">
+                    <span className="font-grotesk font-bold">1-to-1</span> প্রবলেম সলভিং সেশন
+                  </span>
                 </li>
               </ul>
             </div>

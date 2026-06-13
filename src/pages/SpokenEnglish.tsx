@@ -1,6 +1,8 @@
 import { PlayCircle, Video, Award, Smartphone, Calendar, Monitor, CreditCard } from "lucide-react";
 import { motion } from "motion/react";
 import { useEnrollment } from "../context/EnrollmentContext";
+import bangladeshiStudentsImg from "../assets/images/bangladeshi_students_collaborating_1781373710360.jpg";
+import bangladeshiStudentAvatar from "../assets/images/bangladeshi_student_avatar_1781373822412.jpg";
 
 export function SpokenEnglish() {
   const { openEnrollment } = useEnrollment();
@@ -34,8 +36,9 @@ export function SpokenEnglish() {
           className="w-full max-w-5xl mx-auto mb-16 md:mb-24 shadow-2xl rounded-lg overflow-hidden border-4 border-white/20 hover:border-white/40 hover:scale-[1.01] transition-all duration-500 bg-white"
         >
           <img 
-            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop" 
-            alt="Students in a lively discussion" 
+            src={bangladeshiStudentsImg} 
+            alt="Bangladeshi students collaborating with each other in a smiling positive and confident environment" 
+            referrerPolicy="no-referrer"
             className="w-full h-[300px] md:h-[500px] object-cover" 
           />
         </motion.div>
@@ -109,8 +112,9 @@ export function SpokenEnglish() {
             {/* Testimonial / Success */}
             <section className="bg-blue-50 p-8 rounded-lg flex flex-col sm:flex-row items-center gap-6 border border-blue-100 hover:shadow-md transition-shadow">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" 
+                src={bangladeshiStudentAvatar} 
                 alt="Student Testimonial" 
+                referrerPolicy="no-referrer"
                 className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-sm"
               />
               <div>
