@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="bg-[#eef5fc] w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8 mt-auto relative overflow-hidden">
       {/* 1. Overlapping CTA Banner */}
       <div className="max-w-5xl mx-auto mb-[-120px] relative z-20">
-        <div className="bg-[#d02830] text-white rounded-[2rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden font-sans">
+        <div className="bg-[#580c10] text-white rounded-[2rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden font-sans">
           {/* Subtle decorative background gradients */}
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_70%_120%,_var(--tw-gradient-stops))] from-[#00174e] via-transparent to-transparent"></div>
           <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16"></div>
@@ -124,7 +124,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2 flex flex-col gap-4">
             <h4 className="font-grotesk font-bold uppercase tracking-wider text-[#00174e]/90 text-xs">Legal</h4>
             <div className="flex flex-col gap-2.5">
-              <Link to="/privacy" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Privacy Policy</Link>
+              <Link to="/privacy-policy" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">প্রাইভেসি পলিসি</Link>
               <Link to="/terms" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Terms of Service</Link>
               <Link to="/faq" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Help & FAQ</Link>
             </div>

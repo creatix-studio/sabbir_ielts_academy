@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
@@ -21,9 +21,9 @@
   --color-outline: #757681;
   --color-outline-variant: #c5c6d1;
   
-  --font-serif: "Hind Siliguri", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-sans: "Hind Siliguri", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-grotesk: "Hanken Grotesk", sans-serif;
+  --font-serif: "Inter", "Hind Siliguri", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Inter", "Hind Siliguri", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-grotesk: "Inter", sans-serif;
 
   --spacing-section: 120px;
   --spacing-gutter: 24px;
