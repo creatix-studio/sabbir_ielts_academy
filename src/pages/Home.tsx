@@ -17,8 +17,18 @@ export function Home() {
       icon: GraduationCap,
       title: "IELTS Preparation",
       tags: "Academic IELTS • General Training • Live Speaking & Vocabulary",
-      description: "একাডেমিক এবং জেনারেল ট্রেনিং উভয়ের জন্য সম্পূর্ণ গাইডলাইন। লিসেনিং, রিডিং, রাইটিং এবং স্পিকিং - প্রতিটি মডিউলে আলাদাভাবে জোর দেওয়া হয়। আমাদের স্পেশাল টিপস ও ট্রিকস আপনাকে টার্গেট স্কোর অর্জনে সাহায্য করবে।",
-      btnLabel: "DISCUSS IELTS STUDY PLAN",
+      description: [
+        "IELTS কিন্তু শুধু একটা পরীক্ষা না, এইটা একটা যুদ্ধক্ষেত্র।",
+        "যেখানে আপনাকে Planning করে জিততে হবে। আপনি অনেক Brilliant বা গায়ের জোরে এই যুদ্ধে জিতবেন না।",
+        "আপনি Cambridge বই এ হাত দেওয়ার আগে প্রত্যেকটা Module এর কাজটা কি, কোন সমস্যার আপনি সম্মুখীন হবেন আর আপনার Strategy কি হওয়া দরকার, সেটা আগেই ঠিক করে নিতে হবে।",
+        "কখন Scan করবেন আর কখন Skim করবেন, সেটাও জানতে হবে।",
+        "বাজারে হাজার ডজন ডাক্তার আছে। কিন্তু দিনশেষে আপনাকে ঠিক করতে হবে কার ঔষুধ খাবেন।",
+        "সঠিক মানুষের হাতে না পড়লে লোক দেখানো ট্রিকস এন্ড কি ওয়ার্ড শিখে আপনার IELTS Preparation হবে পাহাড়সম কঠিন।",
+        "একটি ফ্রি ক্লাস করে বুঝে নিন IELTS এ ভালো রেজাল্ট করার সকল রহস্য।",
+        "ফ্রি ক্লাসটি করতে আজই যোগাযোগ করুন।"
+      ],
+      btnLabel: "BOOK YOUR FREE CLASS",
+      onClickAction: () => openEnrollment("Free IELTS Class"),
       link: "/ielts",
       activeBg: "bg-[#eef5fc]", // Soft blue/slate
       activeText: "text-[#00174e]",
@@ -30,8 +40,18 @@ export function Home() {
       icon: MessageSquare,
       title: "Spoken English",
       tags: "Fluency Booster • Professional Presentation • Pronunciation Practice • Real-life Conversations",
-      description: "ভয় কাটিয়ে সাবলীলভাবে ইংরেজিতে কথা বলতে শিখুন। প্রাত্যহিক কথোপকথন থেকে শুরু করে প্রফেশনাল প্রেজেন্টেশন - সবকিছুর প্রস্তুতি। আমাদের মেন্টরদের ওয়ান-টু-ওয়ান ফিডব্যাক আপনাকে দ্রুত আত্মবিশ্বাসী করে তুলবে।",
-      btnLabel: "DISCUSS SPOKEN MODULE",
+      description: [
+        "ইংরেজি ভাষা শিখার জন্য লাগে দুইটা জিনিস:",
+        "একটি হলো বাক্য আর একটি হলো কথা বলার সেন্স।",
+        "এখন কথা হলো বাক্য কিভাবে বানাবো?",
+        "উত্তর হলো বাক্য কি দিয়ে শুরু করতে হবে এবং কি দিয়ে শেষ করতে হবে; সে ফর্মুলা জানতে হবে।",
+        "আর একটি সমস্যা হলো কোন সময় কোন Verb বসাবো।",
+        "কারণ Verb এর তো অনেক রুপ হয় ( Go, goes, gone, going)",
+        "উত্তর হলো সঠিক Verb বসানোর জন্য আপনাকে বুঝতে হবে আপনি তখন কোন সিচুয়েশনে এ আছেন।",
+        "এতো কিছু বলার পরেও যদি না বুঝতে পারেন; একটি ফ্রি ক্লাসের জন্য আজি রেজিষ্টেশন করুন এবং নিজের জীবন থেকে আর দুইটি মিনিট ব্যায় করে এখনি কল করুন"
+      ],
+      btnLabel: "BOOK YOUR FREE CLASS",
+      onClickAction: () => openEnrollment("Free Spoken English Class"),
       link: "/spoken-english",
       activeBg: "bg-[#EDB0B3]", // Custom requested coral-rose pastel
       activeText: "text-[#2d0f11]",
@@ -43,7 +63,7 @@ export function Home() {
       icon: Plane,
       title: "Global Education",
       tags: "University Selection • Scholarship Counselling • Visa Processing Support",
-      description: "যুক্তরাজ্য, যুক্তরাষ্ট্র,加拿大 ও অস্ট্রেলিয়ায় উচ্চশিক্ষার জন্য বিশ্ববিদ্যালয় নির্বাচন থেকে শুরু করে ভিসা প্রসেসিং পর্যন্ত সম্পূর্ণ সহায়তা। অভিজ্ঞ কনসালটেন্টদের সাথে আপনার ফাইল নিরাপদে প্রসেস করুন।",
+      description: "যুক্তরাজ্য, যুক্তরাষ্ট্র, কানাডা ও অস্ট্রেলিয়ায় উচ্চশিক্ষার জন্য বিশ্ববিদ্যালয় নির্বাচন থেকে শুরু করে ভিসা প্রসেসিং পর্যন্ত সম্পূর্ণ সহায়তা। অভিজ্ঞ কনসালটেন্টদের সাথে আপনার ফাইল নিরাপদে প্রসেস করুন।",
       btnLabel: "BOOK FREE COUNSELING",
       link: "/services",
       activeBg: "bg-[#fcf0f2]", // Soft pale pink/rose
@@ -254,26 +274,45 @@ export function Home() {
                     {/* Expandable Details Block */}
                     <div
                       className={`transition-all duration-700 ease-in-out overflow-hidden ${
-                        isActive ? "max-h-[500px] opacity-100 mt-6" : "max-h-0 opacity-0"
+                        isActive ? "max-h-[800px] opacity-100 mt-6" : "max-h-0 opacity-0"
                       }`}
                     >
-                      <p className={`font-sans text-base md:text-lg leading-relaxed max-w-4xl mb-8 ${isActive ? "text-neutral-800" : "text-on-surface-variant"}`}>
-                        {service.description}
-                      </p>
+                      <div className={`font-sans text-base md:text-lg leading-relaxed max-w-4xl mb-8 space-y-3 ${isActive ? "text-neutral-800" : "text-on-surface-variant"}`}>
+                        {Array.isArray(service.description) ? (
+                            service.description.map((paragraph, i) => (
+                                <p key={i}>{paragraph}</p>
+                            ))
+                        ) : (
+                            <p>{service.description}</p>
+                        )}
+                      </div>
 
                       {/* Discuss Project Style Pillar Call-To-Action Button */}
                       <div>
-                        <Link
-                          onClick={(e) => e.stopPropagation()}
-                          to={service.link}
-                          className={`inline-flex items-center justify-center font-grotesk text-xs tracking-widest font-bold uppercase border px-8 py-3.5 rounded-full transition-all duration-300 cursor-pointer ${
-                            isActive 
-                              ? `${service.accentBorder} bg-transparent ${service.activeText} hover:bg-black hover:text-white hover:border-black` 
-                              : "border-brand-navy hover:bg-brand-navy hover:text-white"
-                          }`}
-                        >
-                          {service.btnLabel}
-                        </Link>
+                        {service.onClickAction ? (
+                          <button
+                            onClick={(e) => { e.stopPropagation(); service.onClickAction(); }}
+                            className={`inline-flex items-center justify-center font-grotesk text-xs tracking-widest font-bold uppercase border px-8 py-3.5 rounded-full transition-all duration-300 cursor-pointer ${
+                              isActive 
+                                ? `${service.accentBorder} bg-transparent ${service.activeText} hover:bg-black hover:text-white hover:border-black` 
+                                : "border-brand-navy hover:bg-brand-navy hover:text-white"
+                            }`}
+                          >
+                            {service.btnLabel}
+                          </button>
+                        ) : (
+                          <Link
+                            onClick={(e) => e.stopPropagation()}
+                            to={service.link}
+                            className={`inline-flex items-center justify-center font-grotesk text-xs tracking-widest font-bold uppercase border px-8 py-3.5 rounded-full transition-all duration-300 cursor-pointer ${
+                              isActive 
+                                ? `${service.accentBorder} bg-transparent ${service.activeText} hover:bg-black hover:text-white hover:border-black` 
+                                : "border-brand-navy hover:bg-brand-navy hover:text-white"
+                            }`}
+                          >
+                            {service.btnLabel}
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -54,15 +54,37 @@ export function IELTS() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="border-l-4 border-brand-red pl-6"
             >
-              <h2 className="font-serif text-3xl font-bold text-brand-navy mb-6">Master IELTS with Proven Strategies</h2>
-              <p className="font-sans text-lg text-on-surface-variant mb-6">
-                আমাদের IELTS কোর্সটি এমনভাবে ডিজাইন করা হয়েছে যাতে আপনি প্রতিটি মডিউলে (Reading, Writing, Listening, Speaking) আপনার কাঙ্ক্ষিত ব্যান্ড স্কোর অর্জন করতে পারেন।
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <span className="bg-red-50 text-brand-red px-4 py-2 font-grotesk font-bold text-sm uppercase tracking-wider rounded-full">Academic</span>
-                <span className="bg-red-50 text-brand-red px-4 py-2 font-grotesk font-bold text-sm uppercase tracking-wider rounded-full">General Training</span>
-                <span className="bg-red-50 text-brand-red px-4 py-2 font-grotesk font-bold text-sm uppercase tracking-wider rounded-full">Mock Tests</span>
+              <h2 className="font-serif text-3xl font-bold text-brand-navy mb-6">IELTS PREparation</h2>
+              <div className="font-sans text-lg text-on-surface-variant space-y-4 mb-8 leading-relaxed">
+                <p>
+                  IELTS কিন্তু শুধু একটা পরীক্ষা না, এইটা একটা যুদ্ধক্ষেত্র।
+                </p>
+                <p>
+                  যেখানে আপনাকে Planning করে জিততে হবে। আপনি অনেক Brilliant বা গায়ের জোরে এই যুদ্ধে জিতবেন না।
+                </p>
+                <p>
+                  আপনি Cambridge বই এ হাত দেওয়ার আগে প্রত্যেকটা Module এর কাজটা কি, কোন সমস্যার আপনি সম্মুখীন হবেন আর আপনার Strategy কি হওয়া দরকার, সেটা আগেই ঠিক করে নিতে হবে।
+                </p>
+                <p>
+                  কখন Scan করবেন আর কখন Skim করবেন, সেটাও জানতে হবে।
+                </p>
+                <p>
+                  বাজারে হাজার ডজন ডাক্তার আছে। কিন্তু দিনশেষে আপনাকে ঠিক করতে হবে কার ঔষুধ খাবেন।
+                </p>
+                <p>
+                  সঠিক মানুষের হাতে না পড়লে লোক দেখানো ট্রিকস এন্ড কি ওয়ার্ড শিখে আপনার IELTS Preparation হবে পাহাড়সম কঠিন।
+                </p>
+                <p className="font-medium text-brand-navy">
+                  একটি ফ্রি ক্লাস করে বুঝে নিন IELTS এ ভালো রেজাল্ট করার সকল রহস্য।<br />
+                  ফ্রি ক্লাসটি করতে আজই যোগাযোগ করুন।
+                </p>
               </div>
+              <button 
+                onClick={() => openEnrollment("Free IELTS Class")}
+                className="bg-brand-navy text-white px-8 py-3.5 font-grotesk font-bold uppercase tracking-wider hover:bg-brand-red hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer border border-brand-navy hover:border-brand-red"
+              >
+                ফ্রি ক্লাস বুক করুন
+              </button>
             </motion.section>
 
             {/* Features Grid */}

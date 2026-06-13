@@ -67,7 +67,7 @@ export function Footer() {
                 <Facebook size={18} />
               </a>
               <a 
-                href="mailto:shabbirhossaintushar224@gmail.com" 
+                href="mailto:sabbirhossain.sh1225@gmail.com" 
                 className="w-10 h-10 rounded-full bg-[#d02830] hover:bg-[#00174e] text-white flex items-center justify-center transition-colors duration-300 shadow-sm"
                 aria-label="Email Us"
               >
@@ -106,11 +106,11 @@ export function Footer() {
                 <span>+880 1345-693052</span>
               </a>
               <a 
-                href="mailto:shabbirhossaintushar224@gmail.com" 
+                href="mailto:sabbirhossain.sh1225@gmail.com" 
                 className="group flex items-center gap-2.5 text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm break-all"
               >
                 <Mail size={16} className="text-[#00174e]/70 group-hover:text-[#d02830] transition-colors shrink-0" />
-                <span>shabbirhossaintushar224@gmail.com</span>
+                <span>sabbirhossain.sh1225@gmail.com</span>
               </a>
               <div className="flex gap-2.5 text-gray-500 font-sans text-sm items-start leading-relaxed">
                 <MapPin size={16} className="text-[#00174e]/70 mt-0.5 shrink-0" />

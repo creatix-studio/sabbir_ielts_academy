@@ -53,14 +53,30 @@ export function SpokenEnglish() {
               className="border-l-4 border-brand-red pl-6"
             >
               <h2 className="font-serif text-3xl font-bold text-brand-navy mb-6">Master Spoken English with Confidence</h2>
-              <p className="font-sans text-lg text-on-surface-variant mb-6">
-                আমাদের Spoken English কোর্সটি এমনভাবে ডিজাইন করা হয়েছে যাতে আপনি বাস্তব জীবনে সাবলীলভাবে ইংরেজি বলতে পারেন। বিগিনার থেকে অ্যাডভান্সড - সব লেভেলের জন্য এই কোর্সটি উপযুক্ত।
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <span className="bg-red-50 text-brand-red px-4 py-2 font-grotesk font-bold text-sm uppercase tracking-wider rounded-full">Beginner</span>
-                <span className="bg-red-50 text-brand-red px-4 py-2 font-grotesk font-bold text-sm uppercase tracking-wider rounded-full">Intermediate</span>
-                <span className="bg-red-50 text-brand-red px-4 py-2 font-grotesk font-bold text-sm uppercase tracking-wider rounded-full">Advanced</span>
+              <div className="font-sans text-lg text-on-surface-variant space-y-4 mb-8 leading-relaxed">
+                <p>
+                  ইংরেজি ভাষা শিখার জন্য লাগে দুইটা জিনিস:<br />
+                  একটি হলো বাক্য আর একটি হলো কথা বলার সেন্স।
+                </p>
+                <p>
+                  এখন কথা হলো বাক্য কিভাবে বানাবো?<br />
+                  উত্তর হলো বাক্য কি দিয়ে শুরু করতে হবে এবং কি দিয়ে শেষ করতে হবে; সে ফর্মুলা জানতে হবে।
+                </p>
+                <p>
+                  আর একটি সমস্যা হলো কোন সময় কোন Verb বসাবো।<br />
+                  কারণ Verb এর তো অনেক রুপ হয় (Go, goes, gone, going)<br />
+                  উত্তর হলো সঠিক Verb বসানোর জন্য আপনাকে বুঝতে হবে আপনি তখন কোন সিচুয়েশনে এ আছেন।
+                </p>
+                <p className="font-medium text-brand-navy">
+                  এতো কিছু বলার পরেও যদি না বুঝতে পারেন; একটি ফ্রি ক্লাসের জন্য আজই রেজিট্রেশন করুন এবং নিজের জীবন থেকে আর দুইটি মিনিট ব্যয় করে এখনি কল করুন।
+                </p>
               </div>
+              <button 
+                onClick={() => openEnrollment("Free Spoken English Class")}
+                className="bg-brand-navy text-white px-8 py-3.5 font-grotesk font-bold uppercase tracking-wider hover:bg-brand-red hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer border border-brand-navy hover:border-brand-red"
+              >
+                ফ্রি ক্লাস বুক করুন
+              </button>
             </motion.section>
 
             {/* Features Grid */}
