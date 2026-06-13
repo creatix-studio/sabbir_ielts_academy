@@ -6,7 +6,7 @@ const TRAINERS = [
     id: "t1",
     name: "Sabbir Hossain",
     role: "IELTS Instructor | Language Trainer",
-    image: "https://res.cloudinary.com/de67njaee/image/upload/v1781346982/zkhgdwzp29jwxt5vro0g_klax67.webp",
+    image: "https://res.cloudinary.com/de67njaee/image/upload/v1781372226/m7enbobnnt5gm65fxdyj_alpj9t.webp",
     bio: "M.A. in English Literature – Kings International Institute, Dubai. B.A. (Honours) in English Literature – Rangamati Government College. IELTS (British Council) – Overall Band Score: 8.5.",
     expertise: ["IELTS", "Language Training", "Speaking Skills"],
     stats: { students: "1,500+", rating: "4.9/5", experience: "8.5 Years" }
@@ -31,9 +31,9 @@ const TRAINERS = [
   },
   {
     id: "t4",
-    name: "James Wilson",
+    name: "IRFAN WAZID",
     role: "Advanced Grammar & Writing Specialist",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/de67njaee/image/upload/v1781372224/fcr6urrjnmbhn1xfewzp_vszu0m.webp",
     bio: "Linguistics graduate known for breaking down complex grammar rules into simple, actionable steps. Leads advanced writing workshops.",
     expertise: ["Advanced Grammar", "Essay Structure", "Vocabulary Expansion"],
     stats: { students: "4,100+", rating: "4.8/5", experience: "12 Years" }
