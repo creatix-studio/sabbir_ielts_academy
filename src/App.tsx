@@ -12,6 +12,7 @@ import { StudyAbroad } from "./pages/StudyAbroad";
 import { SpokenEnglish } from "./pages/SpokenEnglish";
 import { IELTS } from "./pages/IELTS";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { Trainers } from "./pages/Trainers";
 import { EnrollmentProvider } from "./context/EnrollmentContext";
 import { EnrollmentModal } from "./components/layout/EnrollmentModal";
 import { ChatBot } from "./components/layout/ChatBot";
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/services" element={<StudyAbroad />} />
             <Route path="/spoken-english" element={<SpokenEnglish />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/trainers" element={<Trainers />} />
             <Route path="*" element={<Home />} />
           </Routes>
           <Footer />

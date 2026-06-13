@@ -8,26 +8,26 @@ export function Footer() {
     <footer className="bg-[#eef5fc] w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8 mt-auto relative overflow-hidden">
       {/* 1. Overlapping CTA Banner */}
       <div className="max-w-5xl mx-auto mb-[-120px] relative z-20">
-        <div className="bg-[#580c10] text-white rounded-[2rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden font-sans">
+        <div className="bg-[#00174e] text-white rounded-[2rem] p-8 md:p-14 text-center shadow-2xl relative overflow-hidden font-sans border border-[#002f9c]/50">
           {/* Subtle decorative background gradients */}
-          <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_70%_120%,_var(--tw-gradient-stops))] from-[#00174e] via-transparent to-transparent"></div>
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_70%_120%,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent"></div>
           <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -mr-16 -mt-16"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -ml-16 -mb-16"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-6">
-            <span className="text-[11px] font-grotesk font-bold uppercase tracking-[0.25em] text-[#ffe4e6] bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm">
+            <span className="text-[11px] font-grotesk font-bold uppercase tracking-[0.25em] text-[#e0e7ff] bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/5">
               IELTS & Study Abroad Preparation
             </span>
             <h3 className="font-serif text-3xl md:text-5xl font-bold leading-tight tracking-tight text-white">
               Start Your Success Journey Today
             </h3>
-            <p className="font-sans text-sm md:text-base text-[#ffd1d3] max-w-xl leading-relaxed">
+            <p className="font-sans text-sm md:text-base text-blue-100 max-w-xl leading-relaxed">
               গায়ের জোরে নয়, সঠিক এবং কার্যকরী Planning করে IELTS-এ আপনার কাঙ্ক্ষিত ব্যান্ড স্কোর অর্জন করুন এবং স্বপ্নের গ্লোবাল ক্যারিয়ার গড়ুন।
             </p>
             <div className="mt-2">
               <button
                 onClick={() => openEnrollment()}
-                className="bg-white text-[#d02830] px-8 py-3.5 font-grotesk font-bold uppercase tracking-wider hover:bg-[#00174e] hover:text-white hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 rounded-lg text-xs cursor-pointer"
+                className="bg-[#d02830] text-white px-8 py-3.5 font-grotesk font-bold uppercase tracking-wider hover:bg-white hover:text-[#d02830] hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 rounded-lg text-xs cursor-pointer shadow-[0_4px_14px_0_rgba(208,40,48,0.39)]"
               >
                 Admission Open
               </button>

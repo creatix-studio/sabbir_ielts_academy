@@ -15,6 +15,7 @@ export function Navbar() {
     { name: "Spoken English", path: "/spoken-english" },
     { name: "Study Abroad", path: "/services" },
     { name: "Resources", path: "/resources" },
+    { name: "Trainers", path: "/trainers" },
   ];
 
   return (

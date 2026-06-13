@@ -263,11 +263,9 @@ export function Home() {
 
                       {/* Discuss Project Style Pillar Call-To-Action Button */}
                       <div>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            openEnrollment(service.title);
-                          }}
+                        <Link
+                          onClick={(e) => e.stopPropagation()}
+                          to={service.link}
                           className={`inline-flex items-center justify-center font-grotesk text-xs tracking-widest font-bold uppercase border px-8 py-3.5 rounded-full transition-all duration-300 cursor-pointer ${
                             isActive 
                               ? `${service.accentBorder} bg-transparent ${service.activeText} hover:bg-black hover:text-white hover:border-black` 
@@ -275,7 +273,7 @@ export function Home() {
                           }`}
                         >
                           {service.btnLabel}
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

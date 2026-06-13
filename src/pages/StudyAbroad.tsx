@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Headphones, FileText, PlaneTakeoff, BookOpenCheck, DollarSign, CheckCircle2, Megaphone, PhoneCall } from "lucide-react";
 import { motion } from "motion/react";
 import { useEnrollment } from "../context/EnrollmentContext";
+import bengaliGraduationImg from "../assets/images/malaysia_uni_grad_1781344896020.jpg";
 
 export function StudyAbroad() {
   const { openEnrollment } = useEnrollment();
@@ -100,7 +101,7 @@ export function StudyAbroad() {
                 </Link>
               </div>
               <div className="flex-1 hidden md:block rounded-lg overflow-hidden relative z-10 border border-outline-variant/30">
-                <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Documentation" />
+                <img src={bengaliGraduationImg} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Student wearing graduation customs and hats" referrerPolicy="no-referrer" />
               </div>
             </div>
 
