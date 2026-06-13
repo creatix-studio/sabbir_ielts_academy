@@ -1,56 +1,98 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, User, Bot, HelpCircle } from "lucide-react";
+import { MessageSquare, X, Send, User, Bot, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+
+interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
 
 interface Message {
   id: string;
   sender: "user" | "bot";
   text: string;
   timestamp: Date;
+  faqs?: FAQ[];
 }
+
+const IELTS_FAQS: FAQ[] = [
+  { id: "i1", question: "আমি কোন IELTS দিবো?", answer: "বিদেশে উচ্চশিক্ষার (Bachelor, Master, PhD) জন্য Academic IELTS দিতে হবে। ইমিগ্রেশন বা চাকরির জন্য General Training (GT) IELTS দিতে হবে।" },
+  { id: "i2", question: "টার্গেট স্কোরের জন্য কি কোনো সহায়তা আছে?", answer: "আমাদের একাডেমিতে প্রতিটি শিক্ষার্থীর উইকনেস পয়েন্ট টার্গেট করে কাস্টমাইজড স্টাডি প্ল্যান দেয়া হয়। আপনার কাঙ্ক্ষিত স্কোর না আসা পর্যন্ত আমাদের মেন্টররা গাইড করে থাকেন।" },
+  { id: "i3", question: "মক টেস্ট কি অন্তর্ভুক্ত রয়েছে?", answer: "হ্যাঁ, আমাদের কোর্সে রিয়েল এক্সাম এনভায়রনমেন্টের মতো মক টেস্ট অন্তর্ভুক্ত রয়েছে।" }
+];
+
+const SPOKEN_FAQS: FAQ[] = [
+  { id: "s1", question: "এটি কি বিগিনারদের জন্য?", answer: "আমাদের স্পোকেন ইংলিশ কোর্সটি একদম বেসিক থেকে শুরু হয়, যা মাতৃভাষার মতো করে প্র্যাকটিস করিয়ে ভয় দূর করে।" },
+  { id: "s2", question: "আপনাদের কি স্পিকিং ক্লাব আছে?", answer: "আমাদের স্পোকেন কোর্স এর সাথে রয়েছে ২৪/৭ অনলাইন ও সেমি-লাইভ স্পিকিং সেন্টারের সুবিধা।" },
+  { id: "s3", question: "ক্লাসগুলোতে কোন বিষয়ে ফোকাস করা হয়?", answer: "সঠিক উচ্চারণ, ফ্লুয়েন্সি এবং ডেইলি কনভারসেশনাল ইংরেজি নিয়ে ক্লাস করানো হয়।" }
+];
+
+const STUDY_ABROAD_FAQS: FAQ[] = [
+  { id: "sa1", question: "আপনারা কোন দেশগুলো প্রসেস করেন?", answer: "যুক্তরাজ্য, যুক্তরাষ্ট্র, কানাডা এবং অস্ট্রেলিয়ার জন্য সঠিক গাইডলাইন দিয়ে থাকি।" },
+  { id: "sa2", question: "কাউন্সেলিং কি ফ্রি?", answer: "হ্যাঁ, আমাদের ট্রেইন্ড গ্লোবাল এডুকেশন এক্সপার্টেরা সম্পূর্ণ বিনামূল্যে আপনার প্রোফাইল ও বাজেট অনুযায়ী স্কলারশিপ ও ইউনিভার্সিটি নির্ধারণে সাহায্য করেন।" },
+  { id: "sa3", question: "আপনারা কি ভিসা গাইডলাইনে সহায়তা করেন?", answer: "সঠিক একাডেমিক ডকুমেন্টস তৈরি থেকে শুরু করে কমপ্লিট ভিসা ফাইল তৈরিতে আমরা সম্পূর্ণ সহায়তা দিয়ে থাকি।" }
+];
 
 const FAQ_KNOWLEDGE_BASE = [
   {
-    keywords: ["academic", "general", "gt", "ielts module", "which ielts"],
-    answer: "বিদেশে উচ্চশিক্ষার (Bachelor, Master, PhD) জন্য Academic IELTS দিতে হবে। ইমিগ্রেশন বা চাকরির জন্য General Training (GT) IELTS দিতে হবে। আমাদের কোর্সে উভয় মডিউলের জন্য ডেডিকেটেড ম্যাটেরিয়াল রয়েছে।"
+    keywords: ["ielts", "academic", "general", "gt", "ielts module"],
+    text: "IELTS সম্পর্কে আপনি নিচের সাধারণ প্রশ্নগুলোর (FAQ) উত্তর দেখতে পারেন:",
+    faqs: IELTS_FAQS
   },
   {
-    keywords: ["guarantee", "score", "target", "support", "mentorship", "one to one", "1 to 1"],
-    answer: "আমাদের একাডেমিতে প্রতিটি শিক্ষার্থীর উইকনেস পয়েন্ট টার্গেট করে কাস্টমাইজড স্টাডি প্ল্যান দেয়া হয়। আপনার কাঙ্ক্ষিত স্কোর না আসা পর্যন্ত আমাদের মেন্টররা গাইড করে থাকেন।"
+    keywords: ["spoken", "english", "fluency", "speaking"],
+    text: "Spoken English কোর্স সম্পর্কে আমাদের FAQ গুলো দেখতে পারেন:",
+    faqs: SPOKEN_FAQS
   },
   {
-    keywords: ["spoken", "basic", "grammar", "english", "fluency", "beginner"],
-    answer: "আমাদের স্পোকেন ইংলিশ কোর্সটি একদম বেসিক থেকে শুরু হয়, যা মাতৃভাষার মতো করে প্র্যাকটিস করিয়ে ভয় দূর করে। সঠিক উচ্চারণ ও কথোপকথনের বাক্য দিয়ে ক্লাস করানো হয়।"
-  },
-  {
-    keywords: ["club", "practice", "partner", "speaking club"],
-    answer: "আমাদের স্পোকেন কোর্স এর সাথে রয়েছে ২৪/৭ অনলাইন ও সেমি-লাইভ স্পিকিং সেন্টারের সুবিধা, যেখানে আপনি প্রতিদিন লাইভ গ্রুপ চ্যাট এবং সহপাঠীদের সাথে কথা বলে নিজের জড়তা দূর করতে পারবেন।"
-  },
-  {
-    keywords: ["scholarship", "university", "counseling", "abroad", "study", "free"],
-    answer: "আমাদের ট্রেইন্ড গ্লোবাল এডুকেশন এক্সপার্টেরা সম্পূর্ণ বিনামূল্যে আপনার প্রোফাইল ও বাজেট অনুযায়ী সেরা দেশ, ইউনিভার্সিটি ও স্কলারশিপের অফার নির্ধারণে সাহায্য করেন। 'এখনই ভর্তি হন' এ ক্লিক করে ফর্ম পূরণ করতে পারেন।"
-  },
-  {
-    keywords: ["visa", "bank", "statement", "sponsor", "processing", "file"],
-    answer: "যুক্তরাজ্য, যুক্তরাষ্ট্র, কানাডা এবং অস্ট্রেলিয়ার জন্য সঠিক একাডেমিক ডকুমেন্টস তৈরি, ব্যাংক স্পন্সর গাইডলাইন এবং কমপ্লিট ভিসা ফাইল তৈরিতে আমরা সম্পূর্ণ সহায়তা দিয়ে থাকি।"
-  },
-  {
-    keywords: ["record", "video", "miss", "backup", "class"],
-    answer: "হ্যাঁ! প্রতিটি লাইভ ক্লাসের জন্য আমাদের ডেডিকেটেড পোর্টালে এইচডি (HD) কোয়ালিটির ব্যাকআপ রেকর্ডিং আপলোড করা থাকে। আপনি চাইলে যেকোনো সময় ক্লাসগুলো রিভিশন দিয়ে নিতে পারবেন।"
-  },
-  {
-    keywords: ["payment", "installment", "fee", "cost", "taka", "price", "kisti"],
-    answer: "আমাদের প্রিমিয়াম কোর্সগুলোতে সহজ কিস্তি (২টি ধাপে পেমেন্ট) সুবিধা রয়েছে। বিস্তারিত জানতে আমাদের হেল্পলাইন নম্বরে সরাসরি যোগাযোগ করতে পারেন: +8801345693052"
+    keywords: ["abroad", "study", "visa", "university", "foreign", "scholarship"],
+    text: "উচ্চশিক্ষার (Study Abroad) বিষয়ে নিচের প্রশ্নগুলোর উত্তর আপনার কাজে লাগতে পারে:",
+    faqs: STUDY_ABROAD_FAQS
   },
   {
     keywords: ["address", "location", "where", "office", "branch"],
-    answer: "আমাদের অফিসটি মিরপুর, ঢাকা-তে অবস্থিত। আপনি অনলাইনেও আমাদের সব কোর্সে অংশ নিতে পারবেন।"
+    text: "আমাদের অফিসটি মিরপুর, ঢাকা-তে অবস্থিত। আপনি অনলাইনেও আমাদের সব কোর্সে অংশ নিতে পারবেন।"
   },
   {
     keywords: ["hi", "hello", "hey", "good morning", "good evening", "assalamualaikum", "salam"],
-    answer: "হ্যালো! Sabbir IELTS Academy-এর অটোমেটেড চ্যাটে আপনাকে স্বাগতম। আমি আপনাকে কীভাবে সাহায্য করতে পারি? (IELTS, Spoken, Study Abroad সম্পর্কে জানতে পারেন)"
+    text: "হ্যালো! Sabbir IELTS Academy-তে আপনাকে স্বাগতম। আমি আপনাকে কীভাবে সাহায্য করতে পারি? (IELTS, Spoken, Study Abroad সম্পর্কে জানতে পারেন)"
   }
 ];
+
+function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  return (
+    <div className="mt-3 flex flex-col gap-2">
+      {faqs.map(faq => (
+        <div key={faq.id} className="border border-gray-200 rounded-lg overflow-hidden bg-gray-50">
+          <button 
+            className="w-full text-left px-3 py-2 text-xs font-semibold text-[#00174e] flex justify-between items-center hover:bg-gray-100 transition-colors"
+            onClick={() => setOpenId(openId === faq.id ? null : faq.id)}
+          >
+            <span>{faq.question}</span>
+            {openId === faq.id ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+          <AnimatePresence>
+            {openId === faq.id && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="overflow-hidden"
+              >
+                <div className="p-3 text-[11px] text-gray-700 bg-white border-t border-gray-100">
+                  {faq.answer}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,17 +116,16 @@ export function ChatBot() {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  const findBestAnswer = (query: string) => {
+  const findBestAnswer = (query: string): { text: string; faqs?: FAQ[] } => {
     const lowerQuery = query.toLowerCase();
     
-    // Simple fuzz/keyword match
     for (const item of FAQ_KNOWLEDGE_BASE) {
       if (item.keywords.some(kw => lowerQuery.includes(kw))) {
-        return item.answer;
+        return { text: item.text, faqs: item.faqs };
       }
     }
     
-    return "দুঃখিত, আমি ঠিক বুঝতে পারিনি। আপনি কি দয়া করে নির্দিষ্ট কোনো কোর্সের (IELTS, Spoken) কথা বলবেন? অথবা বিস্তারিত জানতে আমাদের হেল্পলাইন +8801345693052 নাম্বারে কল করুন।";
+    return { text: "দুঃখিত, আমি ঠিক বুঝতে পারিনি। আপনি কি দয়া করে নির্দিষ্ট কোনো কোর্সের (IELTS, Spoken, Study Abroad) কথা বলবেন? অথবা বিস্তারিত জানতে আমাদের হেল্পলাইন +8801345693052 নাম্বারে কল করুন।" };
   };
 
   const handleSendMessage = (e: React.FormEvent) => {
@@ -102,13 +143,13 @@ export function ChatBot() {
     setInputValue("");
     setIsTyping(true);
 
-    // Simulate thinking delay
     setTimeout(() => {
-      const answer = findBestAnswer(userMsg.text);
+      const { text, faqs } = findBestAnswer(userMsg.text);
       const botMsg: Message = {
         id: (Date.now() + 1).toString(),
         sender: "bot",
-        text: answer,
+        text,
+        faqs,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botMsg]);
@@ -158,7 +199,7 @@ export function ChatBot() {
             </div>
 
             {/* Chat Messages */}
-            <div className="flex-1 overflow-y-auto p-4 bg-gray-50 flex flex-col gap-4">
+            <div className="flex-1 overflow-y-auto p-4 bg-gray-50 flex flex-col gap-4" style={{ overscrollBehavior: 'contain' }}>
               <div className="text-center text-xs text-gray-400 font-sans my-2">
                 Today, {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </div>
@@ -174,13 +215,16 @@ export function ChatBot() {
                     </div>
                   )}
                   
-                  <div className={`px-4 py-2.5 rounded-2xl max-w-[80%] shadow-sm ${
+                  <div className={`px-4 py-2.5 rounded-2xl min-w-[60%] max-w-[85%] shadow-sm ${
                     msg.sender === "user" 
                       ? "bg-[#d02830] text-white rounded-br-sm" 
                       : "bg-white text-gray-800 border border-gray-100 rounded-bl-sm"
                   }`}>
                     <p className="text-sm font-sans whitespace-pre-wrap leading-relaxed">{msg.text}</p>
-                    <span className={`text-[9px] mt-1 block ${msg.sender === "user" ? "text-red-200" : "text-gray-400"}`}>
+                    
+                    {msg.faqs && <FAQAccordion faqs={msg.faqs} />}
+                    
+                    <span className={`text-[9px] mt-2 block text-right ${msg.sender === "user" ? "text-red-200" : "text-gray-400"}`}>
                       {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>

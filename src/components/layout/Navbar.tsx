@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Calendar, PhoneCall, HelpCircle, Search } from "lucide-react";
+import { Menu, X, ChevronDown, PhoneCall, HelpCircle, Search } from "lucide-react";
 import { useState } from "react";
 import { cn } from "../../lib/utils";
 import { useEnrollment } from "../../context/EnrollmentContext";
@@ -14,6 +14,7 @@ export function Navbar() {
     { name: "IELTS", path: "/ielts" },
     { name: "Spoken English", path: "/spoken-english" },
     { name: "Study Abroad", path: "/services" },
+    { name: "Resources", path: "/resources" },
   ];
 
   return (
@@ -23,14 +24,8 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto flex justify-between items-center font-grotesk tracking-widest uppercase font-bold text-[10px] md:text-xs">
           <div className="flex items-center gap-4 text-white/80">
             <span>SabbirIELTS Academy</span>
-            <span className="text-white/20">•</span>
-            <span>নম্বর ১ IELTS প্রস্তুতি প্রতিষ্ঠান</span>
           </div>
           <div className="flex items-center gap-6">
-            <Link to="/calendar" className="hover:text-white transition-colors flex items-center gap-1">
-              <Calendar size={12} /> CALENDAR
-            </Link>
-            <span className="text-white/20">|</span>
             <Link to="/support" className="hover:text-white transition-colors flex items-center gap-1">
               <HelpCircle size={12} /> SUPPORT
             </Link>

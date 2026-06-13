@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Globe, Mail, Phone, MapPin, Facebook, ArrowDownRight } from "lucide-react";
+import { useEnrollment } from "../../context/EnrollmentContext";
 
 export function Footer() {
+  const { openEnrollment } = useEnrollment();
   return (
     <footer className="bg-[#eef5fc] w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8 mt-auto relative overflow-hidden">
       {/* 1. Overlapping CTA Banner */}
@@ -23,12 +25,12 @@ export function Footer() {
               গায়ের জোরে নয়, সঠিক এবং কার্যকরী Planning করে IELTS-এ আপনার কাঙ্ক্ষিত ব্যান্ড স্কোর অর্জন করুন এবং স্বপ্নের গ্লোবাল ক্যারিয়ার গড়ুন।
             </p>
             <div className="mt-2">
-              <Link
-                to="/enroll"
-                className="bg-white text-[#d02830] px-8 py-3.5 font-grotesk font-bold uppercase tracking-wider hover:bg-[#00174e] hover:text-white hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 rounded-lg text-xs"
+              <button
+                onClick={() => openEnrollment()}
+                className="bg-white text-[#d02830] px-8 py-3.5 font-grotesk font-bold uppercase tracking-wider hover:bg-[#00174e] hover:text-white hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300 rounded-lg text-xs cursor-pointer"
               >
                 Admission Open
-              </Link>
+              </button>
             </div>
           </div>
         </div>
