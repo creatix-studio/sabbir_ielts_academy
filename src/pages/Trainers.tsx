@@ -7,16 +7,16 @@ const TRAINERS = [
     name: "Sabbir Hossain",
     role: "IELTS Instructor | Language Trainer",
     image: "https://res.cloudinary.com/de67njaee/image/upload/v1781346982/zkhgdwzp29jwxt5vro0g_klax67.webp",
-    bio: "M.A. in English Literature – Kings International Institute, Dubai. B.A. (Honours) in English Literature – Rangamati Government College. IELTS (British Council) – Overall Band Score: 7.",
+    bio: "M.A. in English Literature – Kings International Institute, Dubai. B.A. (Honours) in English Literature – Rangamati Government College. IELTS (British Council) – Overall Band Score: 8.5.",
     expertise: ["IELTS", "Language Training", "Speaking Skills"],
-    stats: { students: "1,500+", rating: "4.9/5", experience: "5 Years" }
+    stats: { students: "1,500+", rating: "4.9/5", experience: "8.5 Years" }
   },
   {
     id: "t2",
-    name: "Mr. David Chen",
-    role: "Spoken English Expert",
+    name: "Mohammad Shariful Islam Manik",
+    role: "Lecturer in English, Asian College, Feni",
     image: "https://res.cloudinary.com/de67njaee/image/upload/v1781346982/kb9x6wuihb5ruwznn2tk_tu4xsa.webp",
-    bio: "Certified TESOL trainer focused on pronunciation, fluency, and business communication. Creates an immersive, fear-free environment for speaking practice.",
+    bio: "M.A. in English. B.A. (Hons), B.Ed. (NU), LL.B. (NU). Dedicated educator focused on pronunciation, fluency, and business communication. Creates an immersive, fear-free environment for speaking practice.",
     expertise: ["Pronunciation", "Business English", "Public Speaking"],
     stats: { students: "3,200+", rating: "4.8/5", experience: "8 Years" }
   },
