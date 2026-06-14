@@ -7,7 +7,7 @@ import { useEnrollment } from "../../context/EnrollmentContext";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { openEnrollment } = useEnrollment();
+  const { openEnrollment, openContact } = useEnrollment();
 
   const links = [
     { name: "Home", path: "/" },
@@ -31,8 +31,8 @@ export function Navbar() {
               <HelpCircle size={12} /> SUPPORT
             </Link>
             <span className="text-white/20">|</span>
-            <Link to="/contact" className="hover:text-white transition-colors flex items-center gap-1">
-              <PhoneCall size={12} /> CONTACT
+            <Link to="#" onClick={(e) => { e.preventDefault(); openContact(); }} className="hover:text-white transition-colors">
+              CONTACT
             </Link>
             <span className="text-white/20">|</span>
             <div className="flex items-center gap-1.5 bg-[#a01a20] text-white px-3 py-1 rounded text-[10px] hover:bg-white hover:text-[#d02830] cursor-pointer transition-all duration-300">

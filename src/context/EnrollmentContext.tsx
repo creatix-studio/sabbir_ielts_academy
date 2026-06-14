@@ -5,6 +5,9 @@ interface EnrollmentContextType {
   selectedCourse: string;
   openEnrollment: (course?: string) => void;
   closeEnrollment: () => void;
+  isContactOpen: boolean;
+  openContact: () => void;
+  closeContact: () => void;
 }
 
 const EnrollmentContext = createContext<EnrollmentContextType | undefined>(undefined);
@@ -12,6 +15,7 @@ const EnrollmentContext = createContext<EnrollmentContextType | undefined>(undef
 export function EnrollmentProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState("");
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const openEnrollment = (course = "") => {
     setSelectedCourse(course);
@@ -22,6 +26,14 @@ export function EnrollmentProvider({ children }: { children: ReactNode }) {
     setIsOpen(false);
   };
 
+  const openContact = () => {
+    setIsContactOpen(true);
+  };
+
+  const closeContact = () => {
+    setIsContactOpen(false);
+  };
+
   return (
     <EnrollmentContext.Provider
       value={{
@@ -29,6 +41,9 @@ export function EnrollmentProvider({ children }: { children: ReactNode }) {
         selectedCourse,
         openEnrollment,
         closeEnrollment: closeModal,
+        isContactOpen,
+        openContact,
+        closeContact,
       }}
     >
       {children}

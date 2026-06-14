@@ -15,6 +15,7 @@ import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { Trainers } from "./pages/Trainers";
 import { EnrollmentProvider } from "./context/EnrollmentContext";
 import { EnrollmentModal } from "./components/layout/EnrollmentModal";
+import { ContactModal } from "./components/layout/ContactModal";
 import { ChatBot } from "./components/layout/ChatBot";
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
           <Footer />
           <ChatBot />
           <EnrollmentModal />
+          <ContactModal />
         </div>
       </BrowserRouter>
     </EnrollmentProvider>

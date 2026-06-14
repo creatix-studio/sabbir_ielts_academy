@@ -3,7 +3,7 @@ import { Globe, Mail, Phone, MapPin, Facebook, ArrowDownRight } from "lucide-rea
 import { useEnrollment } from "../../context/EnrollmentContext";
 
 export function Footer() {
-  const { openEnrollment } = useEnrollment();
+  const { openEnrollment, openContact } = useEnrollment();
   return (
     <footer className="bg-[#eef5fc] w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8 mt-auto relative overflow-hidden">
       {/* 1. Overlapping CTA Banner */}
@@ -90,7 +90,7 @@ export function Footer() {
               <Link to="/services" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">IELTS Preparation</Link>
               <Link to="/spoken-english" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Spoken English</Link>
               <Link to="/services" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Global Education</Link>
-              <Link to="/enroll" className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Free Consulting</Link>
+              <Link to="#" onClick={(e) => { e.preventDefault(); openContact(); }} className="text-gray-500 hover:text-[#d02830] transition-colors font-sans text-sm">Free Consulting</Link>
             </div>
           </div>
 
