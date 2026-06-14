@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MessageSquare, X, Send, User, Bot, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { MessageSquare, X, Send, User, Bot, HelpCircle, ChevronDown, ChevronUp, Bird } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface FAQ {
@@ -164,7 +164,7 @@ export function ChatBot() {
         className={`fixed bottom-6 right-6 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#00174e] text-white rounded-full shadow-2xl hover:bg-[#d02830] transition-all duration-300 ease-in-out hover:-translate-y-1 group ${isOpen ? 'hidden' : 'flex'}`}
         aria-label="Open Chat Guide"
       >
-        <MessageSquare size={28} className="drop-shadow-sm group-hover:scale-110 transition-transform" />
+        <Bird size={28} className="drop-shadow-sm group-hover:scale-110 transition-transform" />
       </button>
 
       <AnimatePresence>
@@ -180,7 +180,7 @@ export function ChatBot() {
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <Bot size={22} className="text-blue-100" />
+                    <Bird size={22} className="text-blue-100" />
                   </div>
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-[#00174e] rounded-full"></div>
                 </div>
@@ -211,7 +211,7 @@ export function ChatBot() {
                 >
                   {msg.sender === "bot" && (
                     <div className="w-6 h-6 rounded-full bg-[#00174e] flex items-center justify-center shrink-0 border border-blue-100 shadow-sm">
-                      <HelpCircle size={14} className="text-white" />
+                      <Bird size={14} className="text-white" />
                     </div>
                   )}
                   
@@ -234,7 +234,7 @@ export function ChatBot() {
               {isTyping && (
                 <div className="flex justify-start items-end gap-2">
                   <div className="w-6 h-6 rounded-full bg-[#00174e] flex items-center justify-center shrink-0 border border-blue-100 shadow-sm">
-                    <Bot size={14} className="text-white" />
+                    <Bird size={14} className="text-white" />
                   </div>
                   <div className="bg-white border border-gray-100 px-4 py-3 rounded-2xl rounded-bl-sm shadow-sm flex items-center gap-1">
                     <motion.div animate={{ y: [0, -3, 0] }} transition={{ repeat: Infinity, duration: 0.8, delay: 0 }} className="w-1.5 h-1.5 bg-gray-400 rounded-full" />
