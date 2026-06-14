@@ -227,7 +227,7 @@ export function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block text-brand-red font-grotesk text-sm font-bold uppercase tracking-widest mb-4">আমাদের সেবাসমূহ</span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#00174e] mb-6">যেভাবে আমরা আপনাকে সাহায্য করতে পারি</h2>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#00174e] mb-6">আপনার কাঙ্ক্ষিত লক্ষ্য অর্জনে আমাদের বিশেষায়িত সেবা</h2>
             <div className="w-20 h-1 bg-brand-red mx-auto rounded-full"></div>
           </div>
 
