@@ -13,6 +13,8 @@ import { SpokenEnglish } from "./pages/SpokenEnglish";
 import { IELTS } from "./pages/IELTS";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import { Trainers } from "./pages/Trainers";
+import { Resources } from "./pages/Resources";
+import { AdminDashboard } from "./pages/AdminDashboard";
 import { EnrollmentProvider } from "./context/EnrollmentContext";
 import { EnrollmentModal } from "./components/layout/EnrollmentModal";
 import { ContactModal } from "./components/layout/ContactModal";
@@ -32,6 +34,9 @@ export default function App() {
             <Route path="/spoken-english" element={<SpokenEnglish />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/trainers" element={<Trainers />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/:category" element={<Resources />} />
+            <Route path="/admin" element={<AdminDashboard />} />
             <Route path="*" element={<Home />} />
           </Routes>
           <Footer />

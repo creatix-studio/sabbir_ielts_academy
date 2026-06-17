@@ -7,7 +7,7 @@ const TRAINERS = [
     name: "Sabbir Hossain",
     role: "IELTS Instructor | Language Trainer",
     image: "https://res.cloudinary.com/de67njaee/image/upload/v1781372226/m7enbobnnt5gm65fxdyj_alpj9t.webp",
-    bio: "M.A. in English Literature – Kings International Institute, Dubai. B.A. (Honours) in English Literature – Rangamati Government College. IELTS (British Council) – Overall Band Score: 8.5.",
+    bio: "M.A. in English Literature – Kings International Institute, Dubai. B.A. (Honours) in English Literature – Rangamati Government College. IELTS (British Council) – Overall Band Score: 7.",
     expertise: ["IELTS", "Language Training", "Speaking Skills"],
     stats: { students: "1,500+", rating: "4.9/5", experience: "8.5 Years" }
   },

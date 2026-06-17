@@ -87,6 +87,18 @@ export function EnrollmentModal() {
     
     // Simulate real database or API submission with elegant delay
     setTimeout(() => {
+      // Store in localStorage for the Admin Dashboard
+      const stored = localStorage.getItem("admissionsData");
+      const admissions = stored ? JSON.parse(stored) : [];
+      
+      const newAdmission = {
+        id: registrationId,
+        date: new Date().toISOString(),
+        ...formData
+      };
+      
+      localStorage.setItem("admissionsData", JSON.stringify([newAdmission, ...admissions]));
+
       setIsSubmitting(false);
       setIsSuccess(true);
     }, 1200);
@@ -198,30 +210,42 @@ export function EnrollmentModal() {
                         আপনার কাঙ্ক্ষিত কোর্সটি নির্বাচন করুন <span className="text-red-500">*</span>
                       </label>
                       <p className="text-xs text-gray-400 font-sans mb-3 font-medium">Select the learning pathway you want to prepare for</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        {[
-                          { name: "IELTS Preparation", desc: "For Academic & GT", icon: "🇬🇧" },
-                          { name: "Spoken English", desc: "Fluency & Presentation", icon: "💬" },
-                          { name: "Global Education", desc: "Study Abroad Help", icon: "✈️" }
-                        ].map((item) => {
-                          const isSelected = formData.course === item.name;
-                          return (
-                            <button
-                              type="button"
-                              key={item.name}
-                              onClick={() => updateField("course", item.name)}
-                              className={`p-4 rounded-xl border-2 text-left transition-all duration-200 cursor-pointer flex flex-col gap-1 ${
-                                isSelected 
-                                  ? "border-[#00174e] bg-[#eef5fc] shadow-md" 
-                                  : "border-gray-200 hover:border-gray-300 hover:bg-neutral-50"
-                              }`}
-                            >
-                              <span className="text-2xl mb-1">{item.icon}</span>
-                              <span className="font-serif font-bold text-sm text-[#00174e] block">{item.name}</span>
-                              <span className="font-sans text-[10px] text-gray-400 block">{item.desc}</span>
-                            </button>
-                          );
-                        })}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        {(() => {
+                          const baseCourses = [
+                            { name: "IELTS Preparation", desc: "For Academic & GT", icon: "🇬🇧" },
+                            { name: "Spoken English", desc: "Fluency & Presentation", icon: "💬" },
+                            { name: "Global Education", desc: "Study Abroad Help", icon: "✈️" }
+                          ];
+                          // If there's a custom selected course, mount it dynamically
+                          const listToUse = [...baseCourses];
+                          if (formData.course && !baseCourses.some(bc => bc.name === formData.course)) {
+                            listToUse.push({
+                              name: formData.course,
+                              desc: "Selected Course Path",
+                              icon: "🎓"
+                            });
+                          }
+                          return listToUse.map((item) => {
+                            const isSelected = formData.course === item.name;
+                            return (
+                              <button
+                                type="button"
+                                key={item.name}
+                                onClick={() => updateField("course", item.name)}
+                                className={`p-4 rounded-xl border-2 text-left transition-all duration-200 cursor-pointer flex flex-col gap-1 ${
+                                  isSelected 
+                                    ? "border-[#00174e] bg-[#eef5fc] shadow-md" 
+                                    : "border-gray-200 hover:border-gray-300 hover:bg-neutral-50"
+                                }`}
+                              >
+                                <span className="text-2xl mb-1">{item.icon}</span>
+                                <span className="font-serif font-bold text-sm text-[#00174e] block">{item.name}</span>
+                                <span className="font-sans text-[10px] text-gray-400 block">{item.desc}</span>
+                              </button>
+                            );
+                          });
+                        })()}
                       </div>
                     </div>
 

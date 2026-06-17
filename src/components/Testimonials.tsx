@@ -16,7 +16,7 @@ const TESTIMONIALS: Testimonial[] = [
     id: 1,
     title: "প্রথমবারেই ৭.৫ ব্যান্ড স্কোর!",
     quote: "SabbirIELTS একাডেমির আইএলটিএস প্ল্যানিং এবং গাইডলাইন ফলো করে প্রথমবারেই আমার ৭.৫ স্কোর এসেছে! বিশেষ করে স্পিকিং সেশন এবং রাইটিং ইভালুয়েশন অতুলনীয় ছিল। ধন্যবাদ সবাইকে!",
-    name: "তানজিবা হাফসা (Tanziba Hafsa)",
+    name: "আঁখি আক্তার (AKHI AKTER)",
     designation: "IELTS Candidate (Score 7.5), University of Windsor",
     avatar: "https://res.cloudinary.com/de67njaee/image/upload/v1781438545/xgafsgolt7o1sr8ie68d_qxo3rs.webp"
   },
@@ -39,7 +39,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 4,
     title: "ব্রেইন ম্যাপিং পদ্ধতি অনন্য!",
-    quote: "অন্যান্য জায়গার মতো এখানে শুধু রুলস শেখানো হয় না, বরং ব্রেইন ম্যাপিং এবং কগনিティブ প্ল্যানিং দিয়ে আইএলটিএস প্রস্তুতিকে অনেক সহজ করে তোলা হয়। সবার জন্য হাইলি রিকমেন্ডেড!",
+    quote: "অন্যান্য প্রতিষ্ঠানের মতো এখানে কেবল নিয়মকানুন মুখস্থ করানো হয় না, বরং বাস্তবসম্মত পরিকল্পনা এবং সঠিক কৌশলের মাধ্যমে এই প্রস্তুতিকে অনেক সহজ করে তোলা হয়। সবার জন্য এটি অত্যন্ত উপযোগী ও চমৎকার একটি জায়গা!",
     name: "মাইশা মাহজাবিন (Maishah Mahzabin)",
     designation: "IELTS Student (Targeting Band 8), Brac University",
     avatar: "https://res.cloudinary.com/de67njaee/image/upload/v1781438546/e7qsvxqvlvidrd8oniyq_nqj45i.webp"
@@ -56,7 +56,7 @@ const TESTIMONIALS: Testimonial[] = [
     id: 6,
     title: "১-টু-১ অসাধারণ মেন্টরিং!",
     quote: "সাব্বির আইএলটিএস একাডেমির স্পেশাল ওয়ান-টু-ওয়ান গাইডেন্স না পেলে রাইটিং এ আমার কাঙ্ক্ষিত স্কোর কখনোই আসতো না। মেন্টরদের আন্তরিকতা সত্যিই প্রশংসনীয়।",
-    name: "আঁখি আক্তার (AKHI AKTER)",
+    name: "তানজিবা হাফসা (Tanziba Hafsa)",
     designation: "IELTS Candidate (Score 8.0), Monash University, Australia",
     avatar: "https://res.cloudinary.com/de67njaee/image/upload/v1781438546/owdmkw1ml0wtjndwdik6_td309a.webp"
   }
@@ -103,17 +103,23 @@ export function TestimonialsSection() {
         </div>
       </div>
 
-      {/* Grid container for 6 static cards */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {TESTIMONIALS.map((testimonial) => (
+      {/* Horizontal auto-scrolling marquee container (1 row, sliding left to right) */}
+      <div className="w-full relative overflow-hidden mt-8 py-4 z-10">
+        {/* Soft edge gradients for a elegant fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#f0eded] via-[#f0eded]/70 to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#f0eded] via-[#f0eded]/70 to-transparent z-20 pointer-events-none"></div>
+
+        {/* Scrolling Inner Row */}
+        <div className="flex animate-marquee-ltr gap-6 px-4">
+          {/* Duplicate set for a clean seamless circular scroll */}
+          {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, idx) => (
             <div
-              key={testimonial.id}
+              key={`${testimonial.id}-${idx}`}
               id={`testimonial-card-${testimonial.id}`}
-              className="flex flex-col sm:flex-row bg-white rounded-3xl p-6 gap-6 border border-neutral-200/55 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] hover:scale-[1.01] transition-all duration-300 self-stretch group animate-fade-in"
+              className="flex flex-col sm:flex-row bg-white rounded-3xl p-6 gap-6 border border-neutral-200/55 shadow-[0_4px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.07)] transition-all duration-300 w-[420px] sm:w-[480px] shrink-0 group self-stretch"
             >
-              {/* Left Side: Highly rounded portrait image */}
-              <div className="w-full sm:w-[150px] md:w-[170px] shrink-0 h-48 sm:h-full min-h-[170px] relative rounded-2xl overflow-hidden">
+              {/* Left Side Image */}
+              <div className="w-24 sm:w-[130px] shrink-0 h-24 sm:h-auto md:h-[130px] relative rounded-2xl overflow-hidden self-center">
                 <img 
                   src={testimonial.avatar} 
                   alt={testimonial.name}
@@ -122,15 +128,15 @@ export function TestimonialsSection() {
                 />
               </div>
 
-              {/* Right Side: Structured Text Elements */}
-              <div className="flex flex-col flex-1 justify-between py-1">
+              {/* Right Side Info */}
+              <div className="flex flex-col flex-grow justify-between py-1">
                 <div>
                   {/* Rating Stars - 5 orange-red stars */}
                   <div className="flex items-center gap-0.5 mb-2.5">
                     {[...Array(5)].map((_, i) => (
                       <svg 
                         key={i} 
-                        className="w-5 h-5 text-orange-600 fill-current" 
+                        className="w-4 h-4 text-orange-600 fill-current" 
                         viewBox="0 0 24 24"
                       >
                         <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -138,23 +144,18 @@ export function TestimonialsSection() {
                     ))}
                   </div>
 
-                  {/* Headline / Title */}
-                  <h3 className="font-sans text-base sm:text-lg font-bold text-gray-900 leading-snug mb-3">
-                    "{testimonial.title}"
-                  </h3>
-
                   {/* Testimonial Quote */}
-                  <p className="font-sans text-xs sm:text-sm text-gray-600 leading-relaxed font-normal mb-5">
-                    {testimonial.quote}
+                  <p className="font-sans text-xs sm:text-[13px] text-gray-600 leading-relaxed font-normal mb-4 italic">
+                    "{testimonial.quote}"
                   </p>
                 </div>
 
-                {/* Footer details inside the card */}
-                <div className="pt-3 border-t border-neutral-100">
-                  <h4 className="font-sans font-bold text-sm sm:text-base text-gray-900">
+                {/* Footer Designation & Name */}
+                <div className="pt-2.5 border-t border-neutral-100">
+                  <h4 className="font-sans font-bold text-xs sm:text-sm text-gray-900">
                     {testimonial.name}
                   </h4>
-                  <p className="font-sans text-xs text-gray-500 mt-0.5 font-medium">
+                  <p className="font-sans text-[10px] text-gray-500 mt-0.5 max-w-[240px] truncate">
                     {testimonial.designation}
                   </p>
                 </div>

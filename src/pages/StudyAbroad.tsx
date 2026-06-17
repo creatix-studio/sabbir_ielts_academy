@@ -197,7 +197,7 @@ export function StudyAbroad() {
           </div>
           <div className="relative p-6">
             <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-red-200 -z-10 rounded-tl-xl hover:scale-110 transition-transform"></div>
-            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" alt="Counseling" className="w-full h-auto rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-500 z-10 bg-white" />
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="University students collaborating and smiling on campus" className="w-full h-auto rounded-lg shadow-xl hover:scale-[1.02] transition-transform duration-500 z-10 bg-white" referrerPolicy="no-referrer" />
             <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-blue-200 -z-10 rounded-br-xl hover:scale-110 transition-transform"></div>
           </div>
         </div>

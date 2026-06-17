@@ -1,15 +1,60 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MonitorPlay, BookOpen, Globe, CheckCircle2, School, MessageSquare, Plane, ArrowRight, GraduationCap } from "lucide-react";
+import { MonitorPlay, BookOpen, Globe, CheckCircle2, School, MessageSquare, Plane, ArrowRight, GraduationCap, MapPin } from "lucide-react";
 import { useEnrollment } from "../context/EnrollmentContext";
 import { FAQSection } from "../components/FAQ";
 import { TestimonialsSection } from "../components/Testimonials";
+import { StudyAbroadBanner } from "../components/StudyAbroadBanner";
 import { motion } from "motion/react";
+
+const OFFLINE_COURSES = [
+  {
+    id: "off1",
+    title: "Basic to IELTS",
+    tag: "BEGINNER",
+    duration: "4.5–6.5 Months",
+    classes: "76+",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    id: "off2",
+    title: "IELTS Focus",
+    tag: "INTERMEDIATE",
+    isPopular: true,
+    duration: "2.5–5 Months",
+    classes: "52+",
+    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    id: "off3",
+    title: "IELTS Crash",
+    tag: "INTENSIVE",
+    duration: "1.5 Months",
+    classes: "31+",
+    image: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    id: "off4",
+    title: "PTE Focus",
+    tag: "INTENSIVE",
+    duration: "2 Months",
+    classes: "18",
+    image: "https://images.unsplash.com/photo-1496181130204-755241544e3f?q=80&w=500&auto=format&fit=crop"
+  },
+  {
+    id: "off5",
+    title: "Spoken English",
+    tag: "ALL LEVELS",
+    duration: "3 Months",
+    classes: "50",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop"
+  }
+];
 
 export function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeService, setActiveService] = useState(0);
-  const { openEnrollment } = useEnrollment();
+  const { openEnrollment, openContact } = useEnrollment();
 
   const services = [
     {
@@ -340,6 +385,142 @@ export function Home() {
         </div>
       </motion.section>
 
+      {/* OFFLINE COURSES SECTION */}
+      <section className="py-24 bg-white border-t border-b border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header row with geolocation badge */}
+          <div className="flex flex-col mb-12">
+            <div className="mb-4">
+              <span className="inline-flex items-center gap-2 border-2 border-[#121f35] py-2 px-5 bg-white text-[#121f35] rounded-sm font-sans text-xs font-black uppercase tracking-wider shadow-sm">
+                <MapPin size={14} className="text-[#d02830] animate-pulse" />
+                DHAKA • CHITTAGONG • SYLHET
+              </span>
+            </div>
+            
+            <h2 className="font-sans text-5xl md:text-7xl font-extrabold tracking-tighter uppercase leading-none">
+              <span className="text-[#121f35]">OFFLINE</span>{" "}
+              <span className="text-[#d02830]">COURSES</span>
+            </h2>
+          </div>
+
+          {/* Grid Layout of 6 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {OFFLINE_COURSES.map((course, index) => (
+              <div 
+                key={course.id}
+                className={`group flex flex-col bg-white border border-slate-200/80 rounded-2xl md:rounded-tr-[3.5rem] md:rounded-bl-[3.5rem] overflow-hidden transition-all duration-500 ease-out relative ${
+                  course.isPopular 
+                    ? "shadow-[0_20px_40px_rgba(208,40,48,0.12)] border-[#d02830]/50 ring-2 ring-[#d02830]/10 ring-offset-2" 
+                    : "shadow-[0_15px_30px_rgba(18,31,53,0.04)] hover:shadow-[0_25px_45px_rgba(18,31,53,0.12)]"
+                } hover:-translate-y-2`}
+              >
+                {/* Popular red tag with micro animations */}
+                {course.isPopular && (
+                  <div className="absolute top-0 right-0 z-20 bg-gradient-to-r from-[#d02830] to-[#e63946] text-white text-[10px] font-sans font-black tracking-widest uppercase px-5 py-2 md:rounded-bl-2xl flex items-center gap-1.5 shadow-md">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                    MOST POPULAR
+                  </div>
+                )}
+
+                {/* Subtle digital numbering badge on each card */}
+                <div className="absolute top-4 right-4 z-10 font-sans text-sm font-black text-white/40 group-hover:text-[#d02830]/80 transition-colors duration-300 md:group-hover:translate-x-[-10px] pointer-events-none">
+                  0{index + 1}
+                </div>
+
+                {/* Course Image Header with overlay text */}
+                <div className="relative h-64 w-full overflow-hidden shrink-0 border-b border-slate-100">
+                  <img 
+                    src={course.image} 
+                    alt={course.title} 
+                    className="w-full h-full object-cover grayscale contrast-[1.10] brightness-95 transition-all duration-700 ease-out group-hover:scale-108 group-hover:rotate-1"
+                    referrerPolicy="no-referrer"
+                  />
+                  
+                  {/* Advanced duo-tone color grading overlay to fit academy's branding */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#121f35] via-[#121f35]/50 to-[#d02830]/10 mix-blend-multiply opacity-85 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#121f35]/95 via-[#121f35]/20 to-transparent"></div>
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm border border-[#121f35]/10 text-[#121f35] text-[10px] font-sans font-black tracking-widest px-3.5 py-1.5 uppercase rounded-full shadow-sm">
+                    {course.tag}
+                  </div>
+
+                  {/* Title overlay at the bottom */}
+                  <div className="absolute bottom-5 left-6 right-6 text-left">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight group-hover:text-[#ffd1d3] transition-colors duration-300">
+                      {course.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Metrics Grid */}
+                <div className="grid grid-cols-2 border-b border-slate-100 divide-x divide-slate-100 bg-slate-50/40 p-1">
+                  <div className="flex flex-col items-center justify-center py-4 px-3 text-center">
+                    <span className="text-[9px] font-sans font-black tracking-widest text-[#121f35]/40 uppercase mb-0.5">DURATION</span>
+                    <span className="text-sm font-sans font-extrabold text-slate-800 tracking-tight">{course.duration}</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center py-4 px-3 text-center">
+                    <span className="text-[9px] font-sans font-black tracking-widest text-[#121f35]/40 uppercase mb-0.5">CLASSES</span>
+                    <span className="text-sm font-sans font-extrabold text-slate-800 tracking-tight">{course.classes} Classes</span>
+                  </div>
+                </div>
+
+                {/* Dynamic Sliding Action Button */}
+                <button
+                  onClick={() => openEnrollment(course.title)}
+                  className="w-full bg-[#121f35] group-hover:bg-[#d02830] text-white font-sans text-xs md:text-sm tracking-widest font-black uppercase py-5 transition-all duration-500 text-center cursor-pointer relative overflow-hidden flex items-center justify-center gap-1.5 mt-auto"
+                >
+                  <span>VIEW DETAILS</span>
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-1 font-bold">→</span>
+                </button>
+              </div>
+            ))}
+
+            {/* Custom Interactive Not Sure card matching styling */}
+            <div className="flex flex-col bg-[#121f35] border border-transparent rounded-2xl md:rounded-tr-[3.5rem] md:rounded-bl-[3.5rem] p-8 relative overflow-hidden shadow-[0_20px_40px_rgba(18,31,53,0.15)] text-white justify-between min-h-[380px] group transition-all duration-500 hover:-translate-y-2">
+              {/* Subtle diagonal stripes custom backdrop */}
+              <div 
+                className="absolute inset-0 opacity-15 pointer-events-none transition-opacity duration-500 group-hover:opacity-20" 
+                style={{ 
+                  backgroundImage: "linear-gradient(45deg,#ffffff 25%,transparent 25%,transparent 50%,#ffffff 50%,#ffffff 75%,transparent 75%,transparent)",
+                  backgroundSize: "28px_28px"
+                }}
+              ></div>
+
+              {/* Glowing decorative ambient light */}
+              <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#d02830]/20 rounded-full blur-2xl"></div>
+
+              <div className="relative z-10 flex flex-col gap-6 md:gap-7 justify-start items-center text-center mt-4">
+                <div className="p-4 bg-white/10 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+                  <Plane className="text-[#d02830] rotate-45 group-hover:translate-y-[-2px] transition-transform duration-300" size={28} />
+                </div>
+                <div>
+                  <h3 className="font-sans text-2xl md:text-3xl font-black uppercase tracking-tight text-white mb-2 leading-tight text-center">
+                    NOT SURE<br />WHICH COURSE?
+                  </h3>
+                  <p className="text-[10px] md:text-xs font-sans tracking-widest text-white/50 font-black uppercase">
+                    TALK TO OUR EXPERT COUNSELORS DIRECTLY
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative z-10 w-full mt-6">
+                <button
+                  onClick={() => openContact()}
+                  className="w-full bg-[#d02830] hover:bg-white hover:text-[#d02830] text-white font-sans text-xs md:text-sm tracking-widest font-black uppercase py-4 px-6 transition-all duration-300 rounded-xl shadow-lg hover:shadow-2xl text-center flex items-center justify-center gap-2 cursor-pointer border border-[#d02830] hover:border-white"
+                >
+                  <span>FREE COUNSELING</span>
+                  <span className="font-bold transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* About Us / Who We Are */}
       <motion.section 
         id="about" 
@@ -359,7 +540,9 @@ export function Home() {
                 SabbirIELTS Academy-তে আমরা বিশ্বাস করি যে, সঠিক গাইডেন্স এবং অধ্যবসায় থাকলে যেকোনো শিক্ষার্থী কাঙ্ক্ষিত স্কোর অর্জন করতে পারে। আমাদের উদ্দেশ্য হলো মানসম্মত ইংরেজি শিক্ষা এবং গ্লোবাল এডুকেশন কনসালটেন্সি প্রতিটি শিক্ষার্থীর দোরগোড়ায় পৌঁছে দেওয়া।
               </p>
               <p className="font-sans text-base text-on-surface-variant mb-8 leading-relaxed">
-                আমরা জটিল বিষয়গুলোকে সহজবোধ্য করে তুলি, যাতে শিক্ষার্থীরা আত্মবিশ্বাসের সাথে তাদের প্রস্তুতি নিতে পারে। আমাদের অভিজ্ঞ মেন্টররা প্রতিটি শিক্ষার্থীর ব্যক্তিগত প্রয়োজনের দিকে লক্ষ্য রেখে তাদের গাইড করেন।
+                যেখানে আমরা আপনাকে স্কিলের সাথে দক্ষ করে তুলতে চাই। আপনাকে আপনার সাথে পরিচয় করিয়ে দিতে চাই।
+                <br /><br />
+                যেখানে আপনি বুঝতে পারবেন, আপনার সমস্যা কি? এবং তার সমাধান কি। আমরা সস্তা ট্রিকস নয় টেকনিকে বিশ্বাসি এবং টিপস নয় প্লানিং এ বিশ্বাসি।
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
@@ -412,8 +595,80 @@ export function Home() {
         </div>
       </motion.section>
 
+      {/* FOUNDER'S BRUTALIST QUOTE BANNER */}
+      <section className="relative overflow-hidden bg-[#0a0c10] py-24 border-t border-b border-gray-900 text-white">
+        
+        {/* Underlaying minimalist grid network background */}
+        <div 
+          className="absolute inset-0 opacity-15 pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(to right, #1a2035 1px, transparent 1px), linear-gradient(to bottom, #1a2035 1px, transparent 1px)",
+            backgroundSize: "45px 45px"
+          }}
+        ></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            {/* Quote details column */}
+            <div className="lg:col-span-7 flex flex-col justify-center text-left">
+              
+              {/* Massive red quote mark */}
+              <div className="font-serif text-[#d02830] text-7xl md:text-8xl leading-none select-none h-10 mb-4 text-left">
+                “
+              </div>
+              
+              {/* Heavy quotation headline */}
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white mb-8 leading-tight text-left">
+                ভাষা ও IELTS-এ শ্রেষ্ঠত্বের নির্ভরযোগ্য নাম — <span className="text-[#d02830]">Sabbir IELTS Academy</span>
+              </h2>
+
+              {/* Subtext description in elegant translation */}
+              <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-8 text-left">
+                Kings International Institute, Dubai থেকে ইংরেজি সাহিত্যে এম.এ সম্পন্ন করা এবং ব্রিটিশ কাউন্সিলের ৭ ব্যান্ড স্কোরধারী সাব্বির হোসেনের হাত ধরেই গড়ে উঠেছে Sabbir IELTS Academy। দীর্ঘ ৮.৫ বছরেরও বেশি সময়ের অভিজ্ঞতায় ১৫০০+ শিক্ষার্থীকে সফলভাবে IELTS ও স্পোকেন মেন্টরিং দিয়েছেন তিনি। তাঁর বিশেষায়িত কারিকুলাম ও ব্যক্তিগত গাইডেন্স আপনাকে প্রথমবারেই কাঙ্ক্ষিত স্কোর অর্জনে সাহায্য করবে।
+              </p>
+
+              {/* Monochromatic dividing line */}
+              <div className="w-full border-t border-slate-800 my-6"></div>
+
+              {/* Founder identities */}
+              <div className="text-left">
+                <h4 className="font-serif text-xl font-bold text-white tracking-wide">
+                  Sabbir Hossain
+                </h4>
+                <p className="font-sans text-xs font-black tracking-widest text-[#d02830] uppercase mt-1">
+                  IELTS INSTRUCTOR | LANGUAGE TRAINER
+                </p>
+              </div>
+
+            </div>
+
+            {/* Profile image column with perfectly clean borders */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative p-1 w-full max-w-[360px] aspect-[4/5] sm:aspect-[3/4]">
+                
+                {/* Main monochrome photorealistic image */}
+                <div className="w-full h-full border border-slate-800 rounded-2xl overflow-hidden bg-slate-900 shadow-2xl">
+                  <img 
+                    src="https://res.cloudinary.com/de67njaee/image/upload/v1781372226/m7enbobnnt5gm65fxdyj_alpj9t.webp" 
+                    alt="Sabbir Hossain - IELTS Instructor & Language Trainer" 
+                    className="w-full h-full object-cover grayscale contrast-[1.12] brightness-[0.93] transition-all duration-700 hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Client Success Stories & Testimonials (Slider with mockup aesthetic style) */}
       <TestimonialsSection />
+
+      {/* Insert Study Abroad Branding Belt */}
+      <StudyAbroadBanner />
 
       {/* Modern Interactive FAQ Section */}
       <FAQSection />
