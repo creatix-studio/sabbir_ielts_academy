@@ -173,6 +173,64 @@ export function SpokenEnglish() {
 
         </div>
       </div>
+
+      {/* Outdoor Classes Gallery */}
+      <section className="bg-white py-24 border-t border-outline-variant">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-brand-navy mb-6">OUTDOOR CLASSES GALLERY</h2>
+            <div className="w-24 h-1.5 bg-brand-red mx-auto relative rounded-full"></div>
+            <p className="font-sans text-lg text-on-surface-variant mt-6 max-w-2xl mx-auto">
+              Experience learning beyond the four walls. Our outdoor sessions boost contextual confidence.
+            </p>
+          </div>
+          
+          <div className="flex flex-col gap-12 md:gap-16 max-w-5xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="overflow-hidden rounded-2xl shadow-xl group border-4 border-white relative w-full"
+            >
+              <div className="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/10 transition-colors duration-500 z-10"></div>
+              <img 
+                src="https://res.cloudinary.com/de67njaee/image/upload/v1781677778/outdoor_class_02_ba6uxh.webp" 
+                alt="Outdoor spoken english class 1" 
+                className="w-full h-auto max-h-[800px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="overflow-hidden rounded-2xl shadow-xl group border-4 border-white relative w-full"
+            >
+              <div className="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/10 transition-colors duration-500 z-10"></div>
+              <img 
+                src="https://res.cloudinary.com/de67njaee/image/upload/v1781677778/outdoor_class_01_whnpm6.webp" 
+                alt="Outdoor spoken english class 2" 
+                className="w-full h-auto max-h-[800px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="overflow-hidden rounded-2xl shadow-xl group border-4 border-white relative w-full"
+            >
+              <div className="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/10 transition-colors duration-500 z-10"></div>
+              <img 
+                src="https://res.cloudinary.com/de67njaee/image/upload/v1781677780/outdoor_class_03_lffeta.webp" 
+                alt="Outdoor spoken english class 3" 
+                className="w-full h-auto max-h-[800px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
